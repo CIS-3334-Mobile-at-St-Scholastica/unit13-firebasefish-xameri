@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    DatabaseReference myFishDbRef;
     Button buttonAdd, buttonDetails, buttonDelete;          // two button widgets
     ListView listViewFish;                                  // listview to display all the fish in the database
     ArrayAdapter<Fish> fishAdapter;
@@ -40,6 +40,26 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupFirebaseDataChange() {
         // ToDo - Add code here to update the listview with data from Firebase
+        // Declaring an object of FishFirebaseData() class
+        fishDataSource = new FishFirebaseData();
+
+        // Then accessing open() method in FishFirebaseData() class using fishDataSource object
+        myFishDbRef = fishDataSource.open();
+        myFishDbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+               // Getting all the fish from database and assigning fish list array list
+                fishList = fishDataSource.getAllFish(dataSnapshot);
+                // Instantiate a custom adapter for displaying each fish
+                fishAdapter = new FishAdapter(MainActivity.this, android.R.layout.simple_list_item_single_choice, fishList);
+                // Apply the adapter to the list
+                listViewFish.setAdapter(fishAdapter);
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("CIS3334", "onCancelled: ");
+            }
+        });
     }
 
     private void setupListView() {

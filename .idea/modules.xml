@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FishLocatorFirebaseStart.iml" filepath="$PROJECT_DIR$/FishLocatorFirebaseStart.iml" />
+      <module fileurl="file://C:\School\Spring\Mobile App\Unit 13\unit13-firebasefish-xameri\FishLocatorFirebaseStart.iml" filepath="C:\School\Spring\Mobile App\Unit 13\unit13-firebasefish-xameri\FishLocatorFirebaseStart.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\School\Spring\Mobile App\Unit 13\unit13-firebasefish-xameri\app\app.iml" filepath="C:\School\Spring\Mobile App\Unit 13\unit13-firebasefish-xameri\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/unit13-firebasefish-xameri.iml" filepath="$PROJECT_DIR$/unit13-firebasefish-xameri.iml" />
     </modules>
   </component>
 </project>
